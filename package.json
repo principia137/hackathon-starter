@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "postinstall": "patch-package && npm run scss",
-    "start": "npm run scss && node app.js",
+    "start": "cross-env NODE_ENV=production node app.js",
     "test": "nyc mocha --timeout=60000 --exit",
     "lint": "eslint \"**/*.js\"",
     "prepare": "if [ \"$NODE_ENV\" != \"production\" ]; then husky install; fi",
@@ -80,6 +80,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.10",
+    "cross-env": "^7.0.3",
     "eslint": "^8.51.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
